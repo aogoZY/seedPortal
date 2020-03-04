@@ -17,13 +17,20 @@ export class LoginService {
 
     constructor(private http: HttpClient, private messageService: MessageService) { }
 
-    excRegister(): Observable<any> {
-        return this.http.get<any>(`${this.domain}/seed/user/register`)
+    excRegister(params): Observable<any> {
+        return this.http.post<any>(`${this.domain}/seed/user/register`, params, httpOptions)
             .pipe(
                 // tap(res => this.log('fetched list')),
                 catchError(this.handleError('getList', []))
             );
     }
+
+    // addHero (hero: Hero): Observable<any> {
+    //   return this.http.post<any>(this.heroesUrl, hero, httpOptions).pipe(
+    //     tap((hero: Hero) => this.log(`added hero w/ id=${hero.id}`)),
+    //     catchError(this.handleError<any>('addHero'))
+    //   );
+    // }
 
     // getDetail(id): Observable<any> {
     //     return this.http.get<any>(`${this.domain}/posts/detail?id=${id}`)

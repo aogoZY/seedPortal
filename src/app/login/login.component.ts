@@ -19,15 +19,19 @@ export class LoginComponent implements OnInit {
 
     doLogin() {
         console.log(this.nickName);
-        console.log(this.password)
+        console.log(this.password);
     }
 
     doRegister() {
-        this.loginService.excRegister().subscribe(({ status, code }) => {
-            if(code === 0) {
+        const params = {
+            nickName: this.nickName,
+            password: this.password
+        };
+        this.loginService.excRegister(params).subscribe(({ status, code }) => {
+            if (code === 0) {
                 alert('注册成功！');
             }
-        })
+        });
     }
 
 }
