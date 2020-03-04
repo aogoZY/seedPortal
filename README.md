@@ -17,3 +17,19 @@
 
 ### Why is vendor so large?
 ![webhook](./src/assets/img/readme/vendor.jpg)
+
+原始大小7.1M，开启gzip压缩之后编程1.3M，开启的方式是在nginx 中添加以下配置，与server 同级
+```
+gzip  on;
+gzip_static on;
+gzip_comp_level 2;
+gzip_http_version 1.0;
+gzip_proxied any;
+gzip_min_length 1100;
+gzip_buffers 16 8k;
+gzip_types text/plain application/javascript application/x-javascript text/css application/xml text/javascript application/x-httpd-php image/jpeg image/gif image/png;
+# Disable for IE < 6 because there are some known problems
+gzip_disable "MSIE [1-6].(?!.*SV1)";
+# Add a vary header for downstream proxies to avoid sending cached gzipped files to IE6
+gzip_vary on;
+```
