@@ -17,11 +17,6 @@ export class LoginComponent implements OnInit {
     ngOnInit() {
     }
 
-    doLogin() {
-        console.log(this.nickName);
-        console.log(this.password);
-    }
-
     doRegister() {
         const params = {
             nickName: this.nickName,
@@ -30,6 +25,18 @@ export class LoginComponent implements OnInit {
         this.loginService.excRegister(params).subscribe(({ status, code }) => {
             if (code === 0) {
                 alert('注册成功！');
+            }
+        });
+    }
+
+    doLogin() {
+        const params = {
+            nickName: this.nickName,
+            password: this.password
+        };
+        this.loginService.excLogin(params).subscribe(({ status, code }) => {
+            if (code === 0) {
+                alert('登录成功！');
             }
         });
     }
