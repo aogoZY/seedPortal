@@ -13,7 +13,7 @@ const httpOptions = {
 @Injectable({ providedIn: 'root' })
 export class LoginService {
 
-    private domain = 'http://127.0.0.1:3000';  // URL to web api
+    private domain = 'http://39.108.163.91:8080';  // URL to web api
 
     constructor(private http: HttpClient, private messageService: MessageService) { }
 

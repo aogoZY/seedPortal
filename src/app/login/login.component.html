@@ -7,9 +7,9 @@
                 [(ngModel)]="nickName" />
             <input class="field" autocomplete="off" name="password" placeholder="Password" type="password"
                 [(ngModel)]="password"/>
-            <input class="field submit" name="submit" type="submit" value="login"
+            <input class="field submit" name="submit" type="submit" value="登录"
                 *ngIf="!needRegister" (click)="doLogin()" />
-            <input class="field submit" name="submit" type="submit" value="register"
+            <input class="field submit" name="submit" type="submit" value="注册"
                 *ngIf="needRegister" (click)="doRegister()" />
             <!-- <a class="link" href="#">Forgot Password?</a><br> -->
             <a class="link" href="#" (click)="needRegister = !needRegister">

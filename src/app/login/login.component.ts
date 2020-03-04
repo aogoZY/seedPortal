@@ -23,8 +23,10 @@ export class LoginComponent implements OnInit {
     }
 
     doRegister() {
-        this.loginService.excRegister().subscribe(({status, code}) => {
-
+        this.loginService.excRegister().subscribe(({ status, code }) => {
+            if(code === 0) {
+                alert('注册成功！');
+            }
         })
     }
 
