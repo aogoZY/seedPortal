@@ -11,5 +11,9 @@
 ![webhook](./src/assets/img/readme/webhook.jpg)
 
 输入Payload URL，点击Add webhook，其中Payload URL的形式为 http://IP:PORT/github-webhook/
-![webhook](./src/assets/img/readme/hookurl.jpg);
+![webhook](./src/assets/img/readme/hookurl.jpg)
 
+## Other Question?
+
+### Why is vendor so large?
+![webhook](./src/assets/img/readme/vendor.jpg)
