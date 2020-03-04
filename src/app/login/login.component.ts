@@ -22,9 +22,11 @@ export class LoginComponent implements OnInit {
             nickName: this.nickName,
             password: this.password
         };
-        this.loginService.excRegister(params).subscribe(({ status, code }) => {
+        this.loginService.excRegister(params).subscribe(({ code, msg }) => {
             if (code === 0) {
                 alert('注册成功！');
+            } else {
+                alert(msg);
             }
         });
     }
@@ -34,9 +36,11 @@ export class LoginComponent implements OnInit {
             nickName: this.nickName,
             password: this.password
         };
-        this.loginService.excLogin(params).subscribe(({ status, code }) => {
+        this.loginService.excLogin(params).subscribe(({ code, msg }) => {
             if (code === 0) {
                 alert('登录成功！');
+            } else {
+                alert(msg);
             }
         });
     }
