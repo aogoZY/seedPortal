@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
 
     ngOnInit() {
         if (isFullScreen()) {
-            alert('全面屏手机');
+            // alert('全面屏手机');
         }
     }
 

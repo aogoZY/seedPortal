@@ -13,6 +13,22 @@
 输入Payload URL，点击Add webhook，其中Payload URL的形式为 http://IP:PORT/github-webhook/
 ![webhook](./src/assets/img/readme/hookurl.jpg)
 
+#### 在github 上生成Personal access tokens 用于授权jenkins 对github 进行的访问
+点击头像下拉菜单中的Settings => Developer Settings => Personal access tokens
+
+![webhook](./src/assets/img/readme/pat.jpg)
+
+勾选repo 和admin:repo_hook
+
+![webhook](./src/assets/img/readme/pt2.jpg)
+
+#### jenkins 添加token
+在添加token 之前，首先要安装Github 插件，安装插件在插件管理中进行，安装好了之后点击管理Jenkins => 系统配置
+
+![webhook](./src/assets/img/readme/jetk.jpg)
+
+
+
 ## Other Question?
 
 ### Why is vendor so large?
