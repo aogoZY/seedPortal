@@ -27,6 +27,12 @@
 
 ![webhook](./src/assets/img/readme/jetk.jpg)
 
+#### 修改Jenkins 构建脚本
+```
+git pull
+ng build --prod
+cp -r dist/seedPortal /var/www/html/seedPortal
+```
 
 
 ## Other Question?
