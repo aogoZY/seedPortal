@@ -55,3 +55,10 @@ gzip_disable "MSIE [1-6].(?!.*SV1)";
 # Add a vary header for downstream proxies to avoid sending cached gzipped files to IE6
 gzip_vary on;
 ```
+
+### Jenkins npm command not found
+```
+echo $PATH
+```
+
+![webhook](./src/assets/img/readme/npm.jpg)
