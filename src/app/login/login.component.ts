@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from './login.service';
+import { isFullScreen } from '../shared/util';
 
 @Component({
     selector: 'app-login',
@@ -8,18 +9,21 @@ import { LoginService } from './login.service';
 })
 export class LoginComponent implements OnInit {
 
-    nickName: string;
+    name: string;
     password: string;
     needRegister = true;
 
     constructor(private loginService: LoginService) { }
 
     ngOnInit() {
+        if (isFullScreen()) {
+            alert('全面屏手机');
+        }
     }
 
     doRegister() {
         const params = {
-            nickName: this.nickName,
+            name: this.name,
             password: this.password
         };
         this.loginService.excRegister(params).subscribe(({ code, msg }) => {
@@ -33,7 +37,7 @@ export class LoginComponent implements OnInit {
 
     doLogin() {
         const params = {
-            nickName: this.nickName,
+            name: this.name,
             password: this.password
         };
         this.loginService.excLogin(params).subscribe(({ code, msg }) => {

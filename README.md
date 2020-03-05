@@ -18,7 +18,7 @@
 ### Why is vendor so large?
 ![webhook](./src/assets/img/readme/vendor.jpg)
 
-原始大小7.1M，开启gzip压缩之后编程1.3M，开启的方式是在nginx 中添加以下配置，与server 同级
+原始大小7.1M，开启gzip压缩之后变成1.3M，开启的方式是在nginx 中添加以下配置，添加位置与server 同级
 ```
 gzip  on;
 gzip_static on;
