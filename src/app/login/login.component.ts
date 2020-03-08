@@ -22,13 +22,17 @@ export class LoginComponent implements OnInit {
     }
 
     doRegister() {
+        if(!this.name || !this.password) {
+            alert('输点啥呗-_-!');
+            return;
+        }
         const params = {
             name: this.name,
             password: this.password
         };
         this.loginService.excRegister(params).subscribe(({ code, msg }) => {
             if (code === 0) {
-                alert('注册成功！');
+                alert('注册成功！可以去登录辣~');
             } else {
                 alert(msg);
             }
@@ -42,7 +46,7 @@ export class LoginComponent implements OnInit {
         };
         this.loginService.excLogin(params).subscribe(({ code, msg }) => {
             if (code === 0) {
-                alert('登录成功！');
+                alert('登录成功！然后就啥也没有辣~');
             } else {
                 alert(msg);
             }
