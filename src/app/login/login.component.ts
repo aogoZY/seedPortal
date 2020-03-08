@@ -22,6 +22,10 @@ export class LoginComponent implements OnInit {
     }
 
     doRegister() {
+        if(!this.name || !this.password) {
+            alert('输点啥呗-_-!');
+            return;
+        }
         const params = {
             name: this.name,
             password: this.password
