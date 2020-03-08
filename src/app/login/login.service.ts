@@ -13,12 +13,14 @@ const httpOptions = {
 @Injectable({ providedIn: 'root' })
 export class LoginService {
 
-    private domain = 'http://39.108.163.91:8080';  // URL to web api
+    // private domain = 'http://39.108.163.91:8080';  // URL to web api
+    private domain = 'http://localhost:8080';  // URL to web api
+
 
     constructor(private http: HttpClient, private messageService: MessageService) { }
 
     excRegister(params): Observable<any> {
-        return this.http.post<any>(`${this.domain}/seed/user/register`, params, httpOptions)
+        return this.http.post<any>(`${this.domain}/user/register`, params, httpOptions)
             .pipe(
                 // tap(res => this.log('fetched list')),
                 catchError(this.handleError('getList', []))
@@ -26,7 +28,7 @@ export class LoginService {
     }
 
     excLogin(params): Observable<any> {
-        return this.http.post<any>(`${this.domain}/seed/user/register`, params, httpOptions)
+        return this.http.post<any>(`${this.domain}/user/login`, params, httpOptions)
             .pipe(
                 // tap(res => this.log('fetched list')),
                 catchError(this.handleError('getList', []))
